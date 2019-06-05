@@ -11,4 +11,13 @@ function readInt(io::IO=stdin)
     end
 end
 
+function readString(io::IO=stdin)
+    input = split(readline(io))
+    if length(input) == 1
+        return input[1]
+    else
+        input
+    end
+end
+
 end # module
