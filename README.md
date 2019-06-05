@@ -1,5 +1,6 @@
 ## Input.jl
-
+[![Build Status](https://travis-ci.com/mildc055ee/Input.jl.svg?branch=master)](https://travis-ci.com/mildc055ee/Input.jl)
+[![Coverage Status](https://coveralls.io/repos/github/mildc055ee/Input.jl/badge.svg?branch=master)](https://coveralls.io/github/mildc055ee/Input.jl?branch=master)
 minimal stdin wrapper for julia
 
 ### readInt
