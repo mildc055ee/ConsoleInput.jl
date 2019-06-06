@@ -1,5 +1,4 @@
 language: julia
-codecov: true
 os:
     - linux
     - osx
@@ -8,14 +7,15 @@ julia:
     - 1.1
     - nightly
 sudo: false
+git:
+    quiet: true
+cache:
+    directories:
+        - $HOME/.julia/registries
 matrix:
     allow_failures:
         - julia: nightly
     fast_finish: true
-script:
-    - julia -e 'using Pkg; Pkg.add("Coverage")'
-    - julia -e 'using Pkg; Pkg.test("Input", coverage=true)'
 notifications:
     email: false
-after_success:
-    - julia -e 'using Coverage; Codecov.submit(process_folder())'
+codecov: true
