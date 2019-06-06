@@ -2,7 +2,13 @@ module Input
 
 export readInt
 
-function readInt(io::IO=stdin, delimiter=" ")
+DlmType = Union{
+    AbstractString,
+    AbstractChar,
+    Regex
+}
+
+function readInt(io::IO=stdin, delimiter::DlmType=" ")
     input = parse.(Int64, split(readline(io), delimiter))
     if length(input) == 1
         return input[1]
@@ -11,7 +17,7 @@ function readInt(io::IO=stdin, delimiter=" ")
     end
 end
 
-function readString(io::IO=stdin, delimiter=" ")
+function readString(io::IO=stdin, delimiter::DlmType=" ")
     input = split(readline(io), delimiter)
     if length(input) == 1
         return input[1]

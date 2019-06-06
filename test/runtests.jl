@@ -4,6 +4,17 @@ origin_stdin = stdin
 test_in = open("./test.txt", "r")
 redirect_stdin(test_in)
 
+@testset "DlmType" begin
+    @test isa(' ', Input.DlmType)
+    @test isa("abc", Input.DlmType)
+    @test isa(r"^\s*(?:#|$)", Input.DlmType)
+
+    function dlm()::String
+            "false"
+    end
+    @test isa(dlm(), Input.DlmType)
+end
+
 @testset "readInt" begin
     @test Input.readInt(test_in) == 1
     @test Input.readInt(test_in) == [1, 2, 3, 4, 5]
