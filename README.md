@@ -13,3 +13,11 @@ readInt() #<-- 1 2 3 4 5
 #--> [1, 2, 3, 4, 5]
 ```
 
+### readString
+```julia
+readString() #<-- Lorem
+#--> "Lorem"
+
+readString() #<-- Lorem ipsum es
+#-->["Lorem", "ipsum", "es"]
+```
