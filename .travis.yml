@@ -13,8 +13,9 @@ matrix:
         - julia: nightly
     fast_finish: true
 script:
+    - julia -e 'using Pkg; Pkg.add("Coverage")'
     - julia -e 'using Pkg; Pkg.test("Input", coverage=true)'
 notifications:
     email: false
 after_success:
-    - julia -e 'using Pkg; Pkg.add("Coverage"); using Coverage; Codecov.submit(process_folder())'
+    - julia -e 'using Coverage; Codecov.submit(process_folder())'
