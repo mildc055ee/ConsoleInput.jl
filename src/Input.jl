@@ -26,4 +26,13 @@ function readString(io::IO=stdin, delimiter::DlmType=" ")
     end
 end
 
+function readGeneral(type, io::IO=stdin, delimiter::DlmType=" ")
+    input = parse.(type, split(readline(io), delimiter))
+    if length(input) == 1
+        return input[1]
+    else
+        input
+    end
+end
+
 end # module

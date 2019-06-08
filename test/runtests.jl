@@ -27,5 +27,10 @@ end
     @test Input.readString(test_in, ";") == ["consectetur", "adipiscing", "elit"]
 end
 
+@testset "readGeneral" begin
+    @test Input.readGeneral(Float64, test_in) == 0.0012
+    @test Input.readGeneral(Complex{Float64}, test_in) == 0.32 + 4.5im
+    @test Input.readGeneral(Complex{Int}, test_in) == [1+5im, 10-4im, -9+8im]
+end
 close(test_in)
 redirect_stdin(origin_stdin)
