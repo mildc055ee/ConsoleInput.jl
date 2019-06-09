@@ -1,4 +1,4 @@
-# Input.jl
+# ConsoleInput.jl
 [![Build Status](https://travis-ci.com/mildc055ee/Input.jl.svg?branch=master)](https://travis-ci.com/mildc055ee/Input.jl)
 [![codecov](https://codecov.io/gh/mildc055ee/Input.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/mildc055ee/Input.jl)
   
