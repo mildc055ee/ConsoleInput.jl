@@ -1,6 +1,6 @@
 module ConsoleInput
 
-export readInt
+include("./utils.jl")
 
 DlmType = Union{
     AbstractString,
@@ -9,30 +9,23 @@ DlmType = Union{
 }
 
 function readInt(io::IO=stdin, delimiter::DlmType=" ")
-    input = parse.(Int64, split(readline(io), delimiter))
-    if length(input) == 1
-        return input[1]
-    else
-        input
-    end
+    readline(io) |>
+    x -> split(x, delimiter) |>
+    x -> parse.(Int64, x) |>
+    process
 end
 
 function readString(io::IO=stdin, delimiter::DlmType=" ")
-    input = split(readline(io), delimiter)
-    if length(input) == 1
-        return input[1]
-    else
-        input
-    end
+    readline(io) |>
+    x -> split(x, delimiter) |>
+    process
 end
 
 function readGeneral(type, io::IO=stdin, delimiter::DlmType=" ")
-    input = parse.(type, split(readline(io), delimiter))
-    if length(input) == 1
-        return input[1]
-    else
-        input
-    end
+    readline(io) |>
+    x -> split(x, delimiter) |>
+    x -> parse.(type, x) |>
+    process
 end
 
 end # module

@@ -1,6 +1,6 @@
 # ConsoleInput.jl
-[![Build Status](https://travis-ci.com/mildc055ee/Input.jl.svg?branch=master)](https://travis-ci.com/mildc055ee/Input.jl)
-[![codecov](https://codecov.io/gh/mildc055ee/Input.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/mildc055ee/Input.jl)
+[![Build Status](https://travis-ci.com/mildc055ee/ConsoleInput.jl.svg?branch=master)](https://travis-ci.com/mildc055ee/ConsoleInput.jl)
+[![codecov](https://codecov.io/gh/mildc055ee/ConsoleInput.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/mildc055ee/ConsoleInput.jl)
   
 minimal stdin wrapper for julia.
 
@@ -14,7 +14,8 @@ DlmType = Union{
 }
 ```
 Default delimiter is `" "`.You can indicate specific delimiter like `readXXX(delimiter=",")`.
-
+  
+**Note** This packages function returns a single value when args is only one. else returns array.
 ### `readInt(io::IO=stdin, delimiter::DlmType=" ")`
 parse inputs to Int.
 ```julia
@@ -43,3 +44,4 @@ parse inputs to any types you want. First argument MUST be a type name.
 readGeneral(Complex{Fload64}) #<--1.2e-3+4j -9+6.8i 0.0004 90.5im
 #-->[0.0012+4.0im, -9.0+6.8im, 0.0004+0.0im, 0.0+90.5im]
 ```
+
